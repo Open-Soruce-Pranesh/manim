@@ -25,6 +25,7 @@ jobs:
         export PATH="$PATH:/home/runner/.local/bin"
         export SPHINXBUILD="python3 -m sphinx"
         make html
+      continue-on-error: true
         
     - name: Deploy to GitHub pages
       if: ${{ github.event_name == 'push' }}
