@@ -1,12 +1,7 @@
 name: docs
 
 on: 
-  push:
-    paths:
-      - 'docs/**'
-  pull_request:
-    paths:
-      - 'docs/**'
+  workflow_dispatch: 
 
 jobs:
   docs:
@@ -38,3 +33,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.DOC_DEPLOY_TOKEN }}
         BRANCH: gh-pages
         FOLDER: docs/build/html
+      continue-on-error: true
